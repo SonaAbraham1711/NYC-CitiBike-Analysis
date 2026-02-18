@@ -1,5 +1,9 @@
-data/
 merged_citibike_2022.csv
-citibike_env/
+data/
+.virtual_documents/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.virtual_documents/
 .DS_Store
 .ipynb_checkpoints/
