@@ -1,29 +1,31 @@
 # NYC Citi Bike Strategic Dashboard Project (2022)
 
 ## Project Overview
-This project involves a descriptive analysis of NYC Citi Bike trip data from 2022. As the lead analyst, the goal is to identify distribution patterns and logistics issues to provide actionable recommendations. This version transitions the project into advanced statistical territory, utilizing Seaborn to analyze user demographics and trip distributions through complex grids and categorical plots.
+This project involves a descriptive and geospatial analysis of NYC Citi Bike trip data from 2022. The goal is to identify distribution patterns, logistics issues, and high-traffic commuter corridors to provide actionable recommendations for bike rebalancing and infrastructure.
 
-## Data Sources
-- **Citi Bike Trip Data:** 2022 open-source trip data (30M+ records) from the [Citi Bike S3 Bucket](https://s3.amazonaws.com/tripdata/index.html).
-- **Weather Data:** 2022 Daily GHCND data from [NOAA](https://www.ncdc.noaa.gov/cdo-web/api/v2/data) (Station: LaGuardia Airport).
+## 📍 Geospatial Analysis (New)
+The latest phase of this project utilizes **Kepler.gl** to visualize the flow of over 30 million trips across New York City using 3D Arc layers.
 
-## Key Visualizations & Analysis
-- **Temperature vs. Ridership:** A dual-axis time-series plot (Object-Oriented Matplotlib) showing the strong positive correlation between daily temperature and trip volume.
-- **Trip Duration Distribution:** A histogram with an overlaid Normal Distribution curve (using `scipy`) showing that most urban trips occur within 10-15 minutes.
-- **User Demographics:** Comparative bar and pie charts analyzing 'Member vs. Casual' riders and 'Classic vs. Electric' bike preferences.
-- **Top 20 Stations**: A horizontal bar chart utilizing a 20-color gradient palette to identify high-traffic start locations for rebalancing logistics.
-- **User Type Analysis**: A box plot comparing 'Member vs. Casual' trip durations, highlighting differences in median usage and variance (IQR).
-- **Behavioral Faceting**: A FacetGrid analysis crossing 'User Type' with 'Bike Type' to visualize how equipment choice affects trip duration across different segments.
+### Key Geospatial Findings:
+* **Commuter Arteries:** Massive trip density identified near Penn Station and Grand Central, confirming Citi Bike's role in "last-mile" transit.
+* **Recreational Hubs:** High volumes along the Hudson River Greenway and Central Park West highlight seasonal and leisure usage.
+* **Inter-Borough Flow:** Analysis of bridge crossings (Williamsburg/Manhattan Bridges) reveals critical cycling links between Brooklyn and Manhattan.
 
-## Libraries & Tools
-- **Environment:** Python 3.x (Virtual Environment: `citibike_env`)
+## 📊 Key Visualizations
+- **Geospatial Map:** 3D Arc visualization of station-to-station paths using Kepler.gl.
+- **Temperature vs. Ridership:** Dual-axis time-series plot showing correlation between weather and trip volume.
+- **User Demographics:** Analysis of 'Member vs. Casual' riders and bike type preferences.
+- **Top 20 Stations:** High-traffic start locations identified for rebalancing logistics.
+
+## 🛠️ Libraries & Tools
+- **Geospatial:** `keplergl`, `setuptools`
 - **Data Manipulation:** `pandas`, `numpy`
-- **Statistical Analysis:** `scipy`
-- **Visualization:** `matplotlib` (Procedural & Object-Oriented paradigms), `seaborn`
+- **Visualization:** `matplotlib`, `seaborn`
+- **Environment:** Python 3.11/3.12 (Virtual Env: `citibike_env_new`)
 
-## How to Navigate this Repo
-- `NYC-CitiBike-Analysis.ipynb`: Notebook for data sourcing, cleaning, and merging.
-- `NYC-CitiBike-Visual-Analysis.ipynb`: **[NEW]** Comprehensive visualization suite including Matplotlib dual-axis charts and distribution analysis.
-- NYC_CitiBike_Seaborn_Analysis.ipynb:**[NEW]** Statistical visualization suite focusing on categorical distributions, custom Seaborn themes, and faceted grids.
-- `nyc_weather_2022.csv`: Cleaned weather data extracted via API.
-- **Note:** Large datasets (`merged_citibike_2022.csv`) are excluded from this repo via `.gitignore` due to size constraints.
+## 📂 How to Navigate this Repo
+- `NYC_CitiBike_Geospatial_Map.ipynb`: **[NEW]** Notebook containing the Kepler.gl map creation and geospatial analysis.
+- `NYC_CitiBike_Final_Map.html`: **[NEW]** Standalone interactive map (Open in Chrome/Safari).
+- `config.json`: **[NEW]** Saved Kepler map configuration.
+- `NYC-CitiBike-Visual-Analysis.ipynb`: Matplotlib and Seaborn visualization suite.
+- `nyc_weather_2022.csv`: Cleaned weather data.
