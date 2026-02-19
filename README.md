@@ -4,7 +4,7 @@
 This project provides a comprehensive descriptive and geospatial analysis of NYC Citi Bike trip data from 2022. By processing over 30 million rows of data, the analysis identifies high-traffic commuter corridors, seasonal ridership trends, and geospatial demand to provide actionable recommendations for station rebalancing and infrastructure optimization.
 
 ## 📍 Live Dashboard
-**View the interactive app here:** [INSERT YOUR STREAMLIT CLOUD URL HERE]
+**View the interactive app here:** https://nyc-citibike-analysis-sa.streamlit.app
 
 The dashboard is built with **Streamlit** and **Plotly**, allowing for real-time exploration of NYC's bike-share network.
 
